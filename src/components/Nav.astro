@@ -1,0 +1,24 @@
+<script>
+  const header = document.querySelector('.site-nav');
+  document.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    if (scrollPosition >= 20 && header) {
+      console.log(window.scrollY)
+      header.classList.add('site-nav--scrolled');
+    } else {
+      header.classList.remove('site-nav--scrolled');
+    }
+  });
+</script>
+
+<header class="site-nav">
+  <nav class="site-content-width nav">
+    <div class="nav__main">
+      <span>Home</span>
+      <span>About</span>
+      <span>Tabs</span>
+    </div>
+  </nav>
+</header>
+<div class="site-nav-placeholder"></div>
+

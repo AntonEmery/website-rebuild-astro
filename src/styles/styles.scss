@@ -1,0 +1,16 @@
+@import url("breakpoints.scss");
+@import url("nav.scss");
+@import url("section.scss");
+@import url("layout.scss");
+
+// Resets
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+html {
+  --site-nav-height: 5rem;
+  --site-content-width: 1232px;
+}

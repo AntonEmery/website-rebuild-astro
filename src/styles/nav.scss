@@ -1,0 +1,33 @@
+.site-nav {
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  transition: background 0.5s ease-in-out;
+
+  // Since the site-nav is fixed and out of the document flow
+  // we need the placeholder to push the rest of the content down
+  &-placeholder {
+    height: var(--site-nav-height);
+  }
+
+
+  &--scrolled {
+    background: white;
+    transition: background 0.5s ease-in-out;
+  }
+}
+
+.nav {
+  height: 5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  &__main {
+    & > span {
+      margin-right: 1rem;
+
+    }
+  }
+}
