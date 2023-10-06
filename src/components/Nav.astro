@@ -1,14 +1,26 @@
 <script>
+
   const header = document.querySelector('.site-nav');
-  document.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY;
-    if (scrollPosition >= 20 && header) {
-      console.log(window.scrollY)
-      header.classList.add('site-nav--scrolled');
-    } else {
-      header.classList.remove('site-nav--scrolled');
-    }
-  });
+  const options = {
+    rootMargin: '900px 0px 90px 0px',
+    threshold: .9
+  }
+
+  const callback = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && header) {
+        header.classList.add('site-nav--scrolled');
+      } else if (!entry.isIntersecting && header) {
+        header.classList.remove('site-nav--scrolled');
+      }
+    })
+  }
+
+  const observer = new IntersectionObserver(callback, options)
+
+  const targetEl = document.querySelector('[data-header]')
+
+  observer.observe(targetEl)
 </script>
 
 <header class="site-nav">
