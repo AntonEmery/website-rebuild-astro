@@ -1,9 +1,14 @@
-<script>
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
 
+<script>
   const header = document.querySelector('.site-nav');
   const options = {
-    rootMargin: '900px 0px 90px 0px',
-    threshold: .9
+    // rootMargin: '900px 0px 90px 0px',
+    rootMargin: '0px 0px -100% 0px',
+    threshold: 0
   }
 
   const callback = (entries, observer) => {
@@ -26,9 +31,9 @@
 <header class="site-nav">
   <nav class="site-content-width nav">
     <div class="nav__main">
-      <span>Home</span>
-      <span>About</span>
-      <span>Tabs</span>
+      <a class={currentPath === '' ? 'active' : ''} href="/"<span>Home</span></a>
+      <a class={currentPath === 'about/' ? 'active' : ''} href="/about/"<span>About</span></a>
+      <a class={currentPath === 'tabs/' ? 'active' : ''} href="/tabs/"<span>Tabs</span></a>
     </div>
   </nav>
 </header>
