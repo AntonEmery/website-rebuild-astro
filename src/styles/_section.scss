@@ -23,7 +23,7 @@
       content: "";
       position: absolute;
       width: 100%;
-      height: 100%;
+      height: calc(100% + var(--site-nav-height));
       left: 0;
       z-index: -2;
       top: var(--background-img-top-position);
@@ -34,6 +34,17 @@
   }
 
   &--about {
-
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      z-index: -2;
+      top: var(--background-img-top-position);
+      background-image: url("/src/images/guitar-close-up.jpg");
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 }

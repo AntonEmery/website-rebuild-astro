@@ -1,9 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const sectionClassName = "about";
 ---
 
 <Layout title="About Anton" description="Bio of Anton Emery, celtic guitarist", keywords="celtic, guitar, acoustic, sheet musc, tabs">
-  <main>
+  <main class=`section section--${sectionClassName}` data-header>
     <h1>About</h1>
   </main>
 </Layout>

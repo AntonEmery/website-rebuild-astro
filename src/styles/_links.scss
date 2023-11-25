@@ -2,7 +2,7 @@ a {
   text-decoration: none;
 
   &:visited {
-    color: black;
+    color: var(--visited-link-color);
   }
 
   &:hover {

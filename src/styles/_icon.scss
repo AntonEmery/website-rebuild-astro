@@ -1,0 +1,11 @@
+.icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
+  &--24 {
+    --icon-size: 1.5rem;
+  }
+
+  &--32 {
+    --icon-size: 2rem;
+  }
+}

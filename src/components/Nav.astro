@@ -1,6 +1,8 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
+import { MobileNav } from './MobileNav.tsx';
+const isAltNavColor = ['about/', 'tabs/'].includes(currentPath);
 ---
 
 <script>
@@ -28,13 +30,14 @@ const currentPath = pathname.slice(1); // remove the first "/"
   observer.observe(targetEl)
 </script>
 
-<header class="site-nav">
+<header class:list={["site-nav", {'site-nav--alt-color': isAltNavColor}]}>
   <nav class="site-content-width nav">
     <div class="nav__main">
       <a class={currentPath === '' ? 'active' : ''} href="/"<span>Home</span></a>
       <a class={currentPath === 'about/' ? 'active' : ''} href="/about/"<span>About</span></a>
       <a class={currentPath === 'tabs/' ? 'active' : ''} href="/tabs/"<span>Tabs</span></a>
     </div>
+    <MobileNav client:load />
   </nav>
 </header>
 <div class="site-nav-placeholder"></div>
