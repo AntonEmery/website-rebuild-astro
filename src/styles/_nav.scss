@@ -3,6 +3,7 @@
   position: fixed;
   width: 100%;
   transition: background 0.5s ease-in-out;
+  z-index: 3;
 
   // Since the site-nav is fixed and out of the document flow
   // we need the placeholder to push the rest of the content down
@@ -90,6 +91,7 @@
       width: 40px;
       background: black;
       transition: all 0.25s ease-out;
+      z-index: 3;
     }
     &--open {
       // Transition lines to an X
