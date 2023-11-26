@@ -1,0 +1,35 @@
+<script>
+  const navHamburger = document.querySelector('.nav__hamburger');
+  const navMobile = document.querySelector('.nav__mobile');
+  navHamburger?.addEventListener('click', () => {
+    console.log('clicked hamburger')
+    navHamburger.classList.toggle('nav__hamburger--open');
+    navMobile?.classList.toggle('nav__mobile--open');
+  });
+
+  navMobile?.addEventListener('blur', (event) => {
+    console.log(event.relatedTarget);
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      navMobile?.classList.remove('nav__mobile--open');
+     navHamburger.classList.remove('nav__hamburger--open');
+
+    }
+  });
+</script>
+
+    <div>
+    <button class="nav__hamburger" aria-label="toggle nav menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+
+
+    </div>
+
+    <div class="nav__mobile" tabindex="1">
+      <p>Mobile Nav</p>
+      <a href="#">Home</a>
+      </div>
+
