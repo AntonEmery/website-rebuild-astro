@@ -1,6 +1,11 @@
 .icon {
   width: var(--icon-size);
   height: var(--icon-size);
+
+  &--16 {
+    --icon-size: 1rem;
+  }
+  
   &--24 {
     --icon-size: 1.5rem;
   }
