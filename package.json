@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/hind-vadodara": "^5.0.18",
+    "@fontsource/lusitana": "^5.0.8",
+    "@fontsource/mallanna": "^5.0.8",
     "astro": "^4.0.7",
     "sass": "^1.68.0"
   },
