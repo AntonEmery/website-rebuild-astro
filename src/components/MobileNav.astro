@@ -1,0 +1,48 @@
+---
+import { parseHref } from "../lib/helpers.js";
+
+const { menuLinks } = Astro.props;
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+---
+
+<script>
+  const navHamburger = document.querySelector(".nav__hamburger");
+  const navMobile = document.querySelector(".nav__mobile");
+  const closeMenu = document.querySelector(".nav__mobile .close-button");
+
+  navHamburger?.addEventListener("click", () => {
+    navMobile?.classList.toggle("nav__mobile--open");
+  });
+
+  document.addEventListener("click", (event) => {
+    const tar = event.target as HTMLElement;
+    if (!tar.closest(".nav__mobile") && !tar.closest(".nav__hamburger")) {
+      navMobile?.classList.remove("nav__mobile--open");
+    }
+  });
+
+  closeMenu?.addEventListener("click", () => {
+    navMobile?.classList.remove("nav__mobile--open");
+  });
+</script>
+
+<div class="nav__mobile" tabindex="1">
+  <button class="close-button" aria-label="close">
+    <svg class="icon icon--16">
+      <use href="/icon/instagram.svg#close"></use>
+    </svg>
+  </button>
+  <section>
+    {
+      menuLinks.map((link) => (
+        <a
+          class={currentPath === parseHref(link) ? "active" : ""}
+          href={link.href}
+        >
+          {link.name}
+        </a>
+      ))
+    }
+  </section>
+</div>
