@@ -1,10 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import HeaderSection from "../layouts/HeaderSection.astro";
+const title = "About Anton";
 const sectionClassName = "about";
 ---
 
-<Layout title="About Anton" description="Bio of Anton Emery, celtic guitarist", keywords="celtic, guitar, acoustic, sheet musc, tabs">
-  <main class=`section section--${sectionClassName}` data-header>
-    <h1>About</h1>
-  </main>
+<Layout
+  title="About Anton"
+  description="Bio of Anton Emery, celtic guitarist"
+  ,
+  keywords="celtic, guitar, acoustic, sheet musc, tabs"
+>
+  <HeaderSection title={title} sectionClassName={sectionClassName} />
 </Layout>
