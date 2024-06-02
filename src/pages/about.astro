@@ -1,10 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
-const sectionClassName = "about";
+import Layout from '../layouts/Layout.astro';
+import HeaderSection from '../layouts/HeaderSection.astro';
+import MainContentSection from '../layouts/MainContentSection.astro';
+const title = 'A short bio';
+const sectionClassName = 'about';
 ---
 
-<Layout title="About Anton" description="Bio of Anton Emery, celtic guitarist", keywords="celtic, guitar, acoustic, sheet musc, tabs">
-  <main class=`section section--${sectionClassName}` data-header>
-    <h1>About</h1>
-  </main>
+<Layout
+  title='Anton | Bio'
+  description='Bio of Anton Emery, celtic guitarist'
+  keywords='celtic, guitar, acoustic, sheet musc, tabs'
+>
+  <HeaderSection
+    sectionClassName={sectionClassName}
+    title={title}
+    imagePath='/src/assets/guitar-close-up.jpg'
+    altText='Close up of two hands playing the guitar'
+  />
+  <MainContentSection title={title} />
 </Layout>

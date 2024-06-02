@@ -2,21 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainContentSection from '../layouts/MainContentSection.astro';
-const title = 'Guitar Tabs';
-const sectionClassName = 'tabs';
+const title = 'Albums';
+const sectionClassName = 'albums';
 ---
 
 <Layout
-  title='Anton | Tabs'
-  description='Celtic guitar tabs and sheet music with audio and video examples'
-  ,
+  title='Anton | Albums'
+  description='The albums of Anton Emery, celtic guitarist'
   keywords='celtic, guitar, acoustic, sheet musc, tabs'
 >
   <HeaderSection
     sectionClassName={sectionClassName}
     title={title}
-    imagePath='/src/assets/guitar-on-table.jpeg'
-    altText='Acoustic guitar on a wooden table'
+    imagePath='/src/assets/in-the-studio.jpeg'
+    altText='Anton recording guitar in the studio'
   />
   <MainContentSection title={title} />
 </Layout>

@@ -1,61 +1,60 @@
 ---
-import MobileNav from "./MobileNav.astro";
-import { parseHref } from "../lib/helpers.js";
+import MobileNav from './MobileNav.astro';
+import { parseHref } from '../lib/helpers.js';
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
-const isAltNavColor = ["about/", "tabs/"].includes(currentPath);
+const isSolidBackground = ['about/', 'tabs/', 'gear/'].includes(currentPath);
 
 const menuLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about/" },
-  { name: "Tabs", href: "/tabs/" },
-  { name: "Gigs", href: "/gigs/" },
-  { name: "Gear", href: "/gear/" },
-  { name: "Blog", href: "/blog/" },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about/' },
+  { name: 'Albums', href: '/albums/' },
+  { name: 'Tabs', href: '/tabs/' },
+  { name: 'Gear', href: '/gear/' },
+  // { name: 'Blog', href: '/blog/' },
 ];
 ---
 
 <script>
-  const header = document.querySelector(".site-nav");
+  const header = document.querySelector('.site-nav');
   const options = {
     // rootMargin: '900px 0px 90px 0px',
-    rootMargin: "0px 0px -100% 0px",
+    rootMargin: '0px 0px -100% 0px',
     threshold: 0,
   };
 
   const callback = (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting && header) {
-        header.classList.add("site-nav--scrolled");
+        header.classList.add('site-nav--scrolled');
       } else if (!entry.isIntersecting && header) {
-        header.classList.remove("site-nav--scrolled");
+        header.classList.remove('site-nav--scrolled');
       }
     });
   };
 
   const observer = new IntersectionObserver(callback, options);
 
-  const targetEl = document.querySelector("[data-header]");
-
+  const targetEl = document.querySelector('[data-header]');
   observer.observe(targetEl);
 </script>
 
-<header class:list={["site-nav", { "site-nav--alt-color": isAltNavColor }]}>
-  <nav class="site-content-width nav">
-    <div class="nav__main">
+<header class:list={['site-nav', { 'site-nav--solid': isSolidBackground }]}>
+  <nav class='site-content-width nav'>
+    <a href='/' class='nav-home-link'>Anton Emery - Celtic Guitar</a>
+    <div class='nav__main'>
       {
         menuLinks.map((link) => (
           <a
-            class={currentPath === parseHref(link) ? "active" : ""}
-            href={link.href}
-          >
+            class={currentPath === parseHref(link) ? 'active' : ''}
+            href={link.href}>
             {link.name}
           </a>
         ))
       }
     </div>
-    <button class="nav__hamburger" aria-label="toggle nav menu">
+    <button class='nav__hamburger' aria-label='toggle nav menu'>
       <span></span>
       <span></span>
       <span></span>
@@ -65,4 +64,4 @@ const menuLinks = [
 
 <MobileNav menuLinks={menuLinks} />
 
-<div class="site-nav-placeholder"></div>
+<div class='site-nav-placeholder'></div>
