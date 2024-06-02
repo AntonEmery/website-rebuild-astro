@@ -1,5 +1,6 @@
 a {
-  text-decoration: none;
+  text-decoration: underline;
+  color: var(--link-color);
 
   &:visited {
     color: var(--visited-link-color);
@@ -7,5 +8,9 @@ a {
 
   &:hover {
     cursor: pointer;
+  }
+
+  &.icon-link {
+    text-decoration: none;
   }
 }

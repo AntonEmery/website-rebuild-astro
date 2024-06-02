@@ -4,11 +4,11 @@
   align-items: center;
   margin-bottom: .5rem;
 
-  div {
+  &>div:first-child {
     margin-left: auto;
   }
 
-  span {
+  &>a {
     margin-left: auto;
   }
 
@@ -22,7 +22,8 @@
     margin-bottom: 1rem;
     align-items: center;
 
-    div, span {
+    div,
+    span {
       margin-left: 0;
     }
   }
