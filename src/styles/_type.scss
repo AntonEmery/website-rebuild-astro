@@ -1,11 +1,21 @@
-h1, h2, h3 {
-    font-family: 'Lusitana', serif;
+h1,
+h2,
+h3 {
+  font-family: 'Lusitana', serif;
 }
 
-h4, h5, h6 {
-    font-family: 'Mallanna', sans-serif;
+h4,
+h5,
+h6 {
+  font-family: 'Mallanna', sans-serif;
 }
 
-p, a {
-    font-family: 'Hind Vadodara', sans-serif;
+p,
+a {
+  font-family: 'Hind Vadodara', sans-serif;
+}
+
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
 }

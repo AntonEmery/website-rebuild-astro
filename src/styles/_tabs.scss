@@ -1,0 +1,12 @@
+.tabs {
+  padding-bottom: 1rem;
+
+  &__controls {
+    display: flex;
+    align-items: center;
+  }
+
+  audio {
+    margin-right: 1rem;
+  }
+}

@@ -7,11 +7,17 @@
 @import "_layout.scss";
 @import "_footer.scss";
 @import "_type.scss";
+@import "_tabs.scss";
 
 // Resets
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+body {
+  container-name: body-container;
+  container-type: inline-size;
 }
 
 
@@ -22,7 +28,10 @@ html {
 
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
+
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --line-height-base: clamp(1.5rem, 0.34vw + 0.91rem, 1.547rem);
+
   --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
   --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
   --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
@@ -33,5 +42,6 @@ html {
 
   --link-color: blue;
   --nav-link-color: black;
+  --divider-color: gray;
 
 }
