@@ -1,0 +1,72 @@
+---
+import Divider from './Divider.astro';
+import { Tabs } from '../data/tabs';
+---
+
+<p>
+  When I first started arranging celtic tunes I found it very insightful to
+  study and learn arrangements by other players. In that spirit, here are a
+  handful of my arrangements, with links to audio files, notation, and a youtube
+  video if there is one. I hope that they may help some of you interested in
+  playing and arranging celtic tunes. I think the real fun happens when you take
+  techniques and styles learned from other players and apply them to your own
+  arrangements.
+</p>
+<p>
+  Some of these tunes do not have accompanying YouTube video. I will work on
+  adding those in the future.
+</p>
+
+<Divider />
+
+{
+  Tabs.map((tab) => (
+    <>
+      <section class='tabs'>
+        <h2>{tab.title}</h2>
+        <h3>Tuning: {tab.tuning}</h3>
+        <p>{tab.description}</p>
+        <div class='tabs__controls'>
+          {tab.audio && (
+            <audio controls>
+              <source src={tab.audio} type='audio/mpeg' />
+              Your browser does not support the audio element.
+            </audio>
+          )}
+          <a
+            class='icon-link'
+            href={tab.notation}
+            title='Sheet music download'
+            target='_blank'>
+            <svg class='icon icon--32'>
+              <use href='/icon/icons.svg#file-pdf' />
+            </svg>
+          </a>
+          {tab.video && (
+            <a
+              class='icon-link'
+              href={tab.video}
+              title='Youtube link'
+              target='_blank'>
+              <svg class='icon icon--32'>
+                <use href='/icon/icons.svg#youtube' />
+              </svg>
+            </a>
+          )}
+          {tab.audio && (
+            <a
+              class='icon-link'
+              href={tab.audio}
+              title='Audio file download'
+              target='_blank'>
+              <svg class='icon icon--32'>
+                <use href='/icon/icons.svg#music-notes' />
+              </svg>
+            </a>
+          )}
+        </div>
+      </section>
+      <Divider />
+    </>
+  ))
+}

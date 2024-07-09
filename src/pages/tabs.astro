@@ -2,12 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainContentSection from '../layouts/MainContentSection.astro';
-const title = 'Guitar Tabs';
+import TabsSection from '../components/Tabs-Section.astro';
+const title = 'Celtic Guitar Sheet Music and Tabs';
 const sectionClassName = 'tabs';
 ---
 
 <Layout
-  title='Anton | Tabs'
+  title='Anton | Cetlic Guitar Tabs'
   description='Celtic guitar tabs and sheet music with audio and video examples'
   ,
   keywords='celtic, guitar, acoustic, sheet musc, tabs'
@@ -18,5 +19,7 @@ const sectionClassName = 'tabs';
     imagePath='/src/assets/guitar-on-table.jpeg'
     altText='Acoustic guitar on a wooden table'
   />
-  <MainContentSection title={title} />
+  <MainContentSection title={title}>
+    <TabsSection />
+  </MainContentSection>
 </Layout>
