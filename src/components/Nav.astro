@@ -4,9 +4,13 @@ import { parseHref } from '../lib/helpers.js';
 
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1); // remove the first "/"
-const isSolidBackground = ['about/', 'tabs/', 'gear/'].includes(currentPath);
 
-const menuLinks = [
+interface MenuLink {
+  name: string;
+  href: string;
+}
+
+const menuLinks: MenuLink[] = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about/' },
   { name: 'Albums', href: '/albums/' },
@@ -16,31 +20,7 @@ const menuLinks = [
 ];
 ---
 
-<script>
-  const header = document.querySelector('.site-nav');
-  const options = {
-    // rootMargin: '900px 0px 90px 0px',
-    rootMargin: '0px 0px -100% 0px',
-    threshold: 0,
-  };
-
-  const callback = (entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting && header) {
-        header.classList.add('site-nav--scrolled');
-      } else if (!entry.isIntersecting && header) {
-        header.classList.remove('site-nav--scrolled');
-      }
-    });
-  };
-
-  const observer = new IntersectionObserver(callback, options);
-
-  const targetEl = document.querySelector('[data-header]');
-  observer.observe(targetEl);
-</script>
-
-<header class:list={['site-nav', { 'site-nav--solid': isSolidBackground }]}>
+<header class='site-nav'>
   <nav class='site-content-width nav'>
     <a href='/' class='nav-home-link'>Anton Emery - Celtic Guitar</a>
     <div class='nav__main'>

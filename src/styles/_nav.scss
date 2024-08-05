@@ -1,6 +1,7 @@
 .site-nav {
-  background: transparent;
-  position: fixed;
+  background: white;
+  position: sticky;
+  top: 0;
   width: 100%;
   transition: background 0.5s ease-in-out;
   z-index: 3;
@@ -20,17 +21,6 @@
     font-family: 'Lusitana', serif;
     font-size: var(--font-size-md);
     font-weight: bold;
-  }
-
-  &--solid {
-    background: white;
-  }
-
-
-  &--scrolled {
-    background: white;
-    transition: background 0.5s ease-in-out;
-    z-index: 3;
   }
 }
 
