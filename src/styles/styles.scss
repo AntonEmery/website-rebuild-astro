@@ -1,3 +1,4 @@
+@import "_variables.scss";
 @import "_breakpoints.scss";
 @import "_icon.scss";
 @import "_links.scss";
@@ -15,8 +16,8 @@ ul {
   padding: 0;
 }
 
-body {
-  container-name: body-container;
+.site-root {
+  container-name: site-root-container;
   container-type: inline-size;
 }
 
@@ -43,5 +44,4 @@ html {
   --link-color: blue;
   --nav-link-color: black;
   --divider-color: #ECECF5;
-
 }

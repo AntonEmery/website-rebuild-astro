@@ -4,11 +4,7 @@
   align-items: center;
   margin-bottom: .5rem;
 
-  &>div:first-child {
-    margin-left: auto;
-  }
-
-  &>a {
+  & > div:first-child, & > a {
     margin-left: auto;
   }
 
@@ -16,10 +12,14 @@
     font-size: var(--font-size-sm);
   }
 
-  @media screen and (max-width: $mobile-upper-limit) {
+  @media screen and (max-width: $mobile-nav-footer-breakpoint) {
     flex-direction: column;
     margin-bottom: 1rem;
     align-items: center;
+
+    & > div:first-child, & > a {
+      margin-left: initial;
+    }
 
     div,
     span {

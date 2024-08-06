@@ -42,7 +42,7 @@
       }
     }
 
-    @media screen and (max-width: $mobile-upper-limit) {
+    @container site-root-container (width <= #{$mobile-nav-footer-breakpoint}) {
       display: none;
     }
   }
@@ -112,7 +112,7 @@
     background: transparent;
     border: none;
 
-    @media screen and (min-width: $mobile-upper-limit) {
+    @container site-root-container (width > #{$mobile-nav-footer-breakpoint}) {
       display: none;
     }
 

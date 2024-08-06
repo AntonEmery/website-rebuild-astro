@@ -1,9 +1,11 @@
 .main-content-section {
   max-width: var(--site-content-width);
   margin: 0 auto 2rem auto;
+  min-height: 20rem;
+  margin-top: -5rem;
 }
 
-@container body-container (width <= 1232px) {
+@container site-root-container (width <= 1232px) {
   .main-content-section {
     padding: 0 1.5rem;
   }

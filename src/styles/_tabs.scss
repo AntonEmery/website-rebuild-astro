@@ -1,12 +1,26 @@
 .tabs {
+  container-name: tabs-container;
+  container-type: inline-size;
   padding-bottom: 1rem;
 
   &__controls {
     display: flex;
     align-items: center;
-  }
 
-  audio {
-    margin-right: 1rem;
+    audio {
+      margin-right: 1rem;
+    }
+
+    @container tabs-container (width <= 500px ) {
+      flex-direction: column;
+
+      .tabs-icons {
+        margin-top: 1rem;
+      }
+
+      audio {
+        margin-right: 0;
+      }
+    }
   }
 }
