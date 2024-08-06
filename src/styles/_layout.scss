@@ -8,3 +8,24 @@
     padding: 0 3rem;
   }
 }
+
+.site-root {
+  // Set the main scrolling container to the height of the viewport
+  // and hide the overflow when a popup is open so the user can scroll underneath it
+  &--popup-open {
+    height: 100vh;
+    overflow: hidden;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      pointer-events: none;
+    }
+  }
+}
