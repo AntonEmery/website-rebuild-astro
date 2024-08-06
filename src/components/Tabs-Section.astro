@@ -33,37 +33,39 @@ import { Tabs } from '../data/tabs';
               Your browser does not support the audio element.
             </audio>
           )}
-          <a
-            class='icon-link'
-            href={tab.notation}
-            title='Sheet music download'
-            target='_blank'>
-            <svg class='icon icon--32'>
-              <use href='/icon/icons.svg#file-pdf' />
-            </svg>
-          </a>
-          {tab.video && (
+          <div class='tabs-icons'>
             <a
               class='icon-link'
-              href={tab.video}
-              title='Youtube link'
+              href={tab.notation}
+              title='Sheet music download'
               target='_blank'>
               <svg class='icon icon--32'>
-                <use href='/icon/icons.svg#youtube' />
+                <use href='/icon/icons.svg#file-pdf' />
               </svg>
             </a>
-          )}
-          {tab.audio && (
-            <a
-              class='icon-link'
-              href={tab.audio}
-              title='Audio file download'
-              target='_blank'>
-              <svg class='icon icon--32'>
-                <use href='/icon/icons.svg#music-notes' />
-              </svg>
-            </a>
-          )}
+            {tab.video && (
+              <a
+                class='icon-link'
+                href={tab.video}
+                title='Youtube link'
+                target='_blank'>
+                <svg class='icon icon--32'>
+                  <use href='/icon/icons.svg#youtube' />
+                </svg>
+              </a>
+            )}
+            {tab.audio && (
+              <a
+                class='icon-link'
+                href={tab.audio}
+                title='Audio file download'
+                target='_blank'>
+                <svg class='icon icon--32'>
+                  <use href='/icon/icons.svg#music-notes' />
+                </svg>
+              </a>
+            )}
+          </div>
         </div>
       </section>
       <Divider />
