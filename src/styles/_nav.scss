@@ -52,17 +52,19 @@
     position: absolute;
     background: white;
     top: 0;
-    left: 0;
+    right: 0;
     height: auto;
-    width: 100%;
+    width: 20rem;
     z-index: 4;
-    transition: all 0.25s ease-out;
+    transition: all 0.15s ease-out;
     pointer-events: none;
 
     &--open {
       opacity: 1;
       pointer-events: auto;
-      position: sticky;
+      z-index: 101;
+      position: fixed;
+      top: 0;
     }
 
     section {
@@ -76,11 +78,12 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: .5rem 0;
-        border-bottom: 1px solid gray;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--divider-color);
+        font-size: var(--font-size-md);
 
         &:first-child {
-          border-top: 1px solid gray;
+          border-top: 1px solid var(--divider-color);
         }
       }
     }
