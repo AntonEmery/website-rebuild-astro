@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainContentSection from '../layouts/MainContentSection.astro';
 import ImageAndCaption from '../components/ImageAndCaption.astro';
+
 const title = 'About Anton';
 const sectionClassName = 'about';
 ---
@@ -14,7 +15,6 @@ const sectionClassName = 'about';
 >
   <HeaderSection
     sectionClassName={sectionClassName}
-    title={title}
     imagePath='/src/assets/guitar-close-up.jpg'
     altText='Close up of two hands playing the guitar'
   />

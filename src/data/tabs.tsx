@@ -2,8 +2,8 @@ interface Tab {
   title: string;
   description: string;
   tuning: string;
-  audio?: string | boolean;
-  video?: string | boolean;
+  audio?: string;
+  video?: string;
   notation: string;
 }
 
@@ -37,7 +37,6 @@ export const Tabs: Tab[] = [
     description: "A fun tune I heard Steve Baughman play one night as we were hanging out with a bottle of scotch. I made a mental note to arrange myself one day. He said he got it from Martin Hayes.",
     tuning: 'CGDGCD',
     audio: '/audio/granny_in_the_corner.mp3',
-    video: false,
     notation: '/tabs/granny_in_the_corner.pdf',
   },
   {
@@ -45,7 +44,6 @@ export const Tabs: Tab[] = [
     description: "This is a standard jig that you can hear at almost every irish session.",
     tuning: 'CGDGCD - Capo II',
     audio: '/audio/tobins_jig.mp3',
-    video: false,
     notation: '/tabs/tobins_jig.pdf',
   },
   {
@@ -53,7 +51,6 @@ export const Tabs: Tab[] = [
     description: 'Another popular reel that you can hear at almost every irish session.',
     tuning: 'CGDGCD',
     audio: '/audio/father_kellys.mp3',
-    video: false,
     notation: '/tabs/father_kellys_reel.pdf',
   },
   {
@@ -85,7 +82,6 @@ export const Tabs: Tab[] = [
     description: "Another popular session jig",
     tuning: 'CGDGCD',
     audio: '/audio/kesh_jig.mp3',
-    video: false,
     notation: '/tabs/kesh_jig.pdf',
   },
   {
@@ -93,7 +89,6 @@ export const Tabs: Tab[] = [
     description: "Another beautiful tune by Turlough O'Carolan",
     tuning: 'CGDGCD',
     audio: '/audio/princess_royal.mp3',
-    video: false,
     notation: '/tabs/princess_royal.pdf',
   },
   {

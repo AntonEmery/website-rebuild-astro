@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainContentSection from '../layouts/MainContentSection.astro';
+
 const title = 'Gear';
 const sectionClassName = 'gear';
 ---
@@ -13,9 +14,10 @@ const sectionClassName = 'gear';
 >
   <HeaderSection
     sectionClassName={sectionClassName}
-    title={title}
     imagePath='/src/assets/guitar-banjo.jpg'
     altText='guitar and banjo leaning on the couch'
   />
-  <MainContentSection title={title} />
+  <MainContentSection title={title}>
+    <p>Content coming soon!</p>
+  </MainContentSection>
 </Layout>
