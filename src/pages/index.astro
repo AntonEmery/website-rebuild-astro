@@ -3,12 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainContentSection from '../layouts/MainContentSection.astro';
 const sectionClassName = 'home';
-const title = 'Anton Emery - Celtic Fingerstyle Guitar';
+const title = 'Anton Emery - Celtic Fingerstyle Guitarist';
 ---
 
 <Layout
   title='Anton Emery | Celtic Guitar'
-  description='celtic music on fingerstyle guitar'
+  description='Celtic fingerstyle guitarist Anton Emery'
   keywords='celtic, fingerstyle, acoustic, guitar'
 >
   <HeaderSection
@@ -17,5 +17,20 @@ const title = 'Anton Emery - Celtic Fingerstyle Guitar';
     imagePath='/src/assets/backyard-guitar.jpg'
     altText='Anton in the backyard'
   />
-  <MainContentSection title={title} />
+  <MainContentSection title={title}>
+    <p>
+      Hi, and welcome to my shiny new website! Apologies for it being down for a
+      while. My old site had broken, and it took me a while to build this one
+      and get it deployed. Bear with me as I add more content; I've currently
+      got the Tabs page up, with free transcriptions of my celtic guitar
+      arrangements.
+    </p>
+
+    <p>
+      I am a fingerstyle guitarist based in Portland, Oregon. I specialize in
+      Celtic music, but I also play a variety of other styles. I am available
+      for performances, lessons, and collaborations. Please feel free to reach
+      out to me if you are interested in working together. antonemery@gmail.com
+    </p>
+  </MainContentSection>
 </Layout>
