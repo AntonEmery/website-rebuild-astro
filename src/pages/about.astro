@@ -2,13 +2,14 @@
 import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainContentSection from '../layouts/MainContentSection.astro';
-const title = 'A short bio';
+import ImageAndCaption from '../components/ImageAndCaption.astro';
+const title = 'About Anton';
 const sectionClassName = 'about';
 ---
 
 <Layout
   title='Anton Emery | About'
-  description='Bio of Anton Emery, celtic guitarist'
+  description='Bio of Anton Emery, celtic fingerstyle guitarist'
   keywords='celtic, guitar, acoustic, sheet musc, tabs'
 >
   <HeaderSection
@@ -17,5 +18,34 @@ const sectionClassName = 'about';
     imagePath='/src/assets/guitar-close-up.jpg'
     altText='Close up of two hands playing the guitar'
   />
-  <MainContentSection title={title} />
+  <MainContentSection title={title}>
+    <p>
+      Anton Emery is a masterful guitarist acclaimed for his stunning
+      arrangements of Celtic music. Playing finger-style on a steel-string
+      acoustic guitar, he performs a body of music traditionally performed on
+      fiddle, flute, and bagpipes, giving it a fresh voice while losing none of
+      its rhythm, feel, and magical quality.
+    </p>
+
+    <p>
+      Anton studied extensively with players such as Tony McManus, Al Petteway,
+      Robin Bullock, and Steve Baughman. His repertoire ranges from traditional,
+      driving jigs and reels, to gorgeous slow airs, harp tunes, and unusual
+      pieces from less-well-known Celtic sources in Galicia and Brittany.
+    </p>
+
+    <p>
+      His debut solo release, "Noone Lasses," was selected as one of the top
+      Celtic recordings of 2010 by Celtic MP3s Music Magazine. Minor 7th
+      Acoustic Music Reviews wrote "Anton Emery's debut CD 'Noone Lasses' has
+      all the qualities of that rare album one finds in an obscure record shop
+      that instantly becomes a lifetime favorite!” Anton currently lives in
+      Portland, Oregon.
+    </p>
+    <ImageAndCaption
+      imagePath='/src/assets/alberico-living-room.jpg'
+      altText='anton fingerpicking acoustic guitar'
+      caption='Photo by Fabrizio Alberico'
+    />
+  </MainContentSection>
 </Layout>
