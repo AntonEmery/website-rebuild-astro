@@ -16,6 +16,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 <main class=`section section--${sectionClassName}` data-header>
   <div class='hero-image'>
-    <Image src={images[imagePath]()} alt={altText} />
+    <Image src={images[imagePath]()} alt={altText} loading='eager' />
   </div>
 </main>
