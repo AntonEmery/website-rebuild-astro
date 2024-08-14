@@ -1,3 +1,5 @@
+You can check out the actual site at http://www.celticfingerstyleguitar.com
+
 # Astro Starter Kit: Basics
 
 ```sh
