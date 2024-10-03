@@ -1,0 +1,25 @@
+---
+interface Props {
+  href: string;
+  linkText: string;
+  icon: string;
+  title: string;
+}
+
+const { href, linkText, icon, title } = Astro.props;
+---
+
+<a
+  href={href}
+  title=`Listen to ${title} on ${linkText}`
+  target='_blank'
+  rel='noopener noreferrer'
+  class='album-link'
+>
+  <span
+    >{linkText}
+    <svg class='icon icon--32'>
+      <use href=`/icon/icons.svg#${icon}`></use>
+    </svg></span
+  ></a
+>
