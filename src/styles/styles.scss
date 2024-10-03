@@ -10,6 +10,7 @@
 @import "_type.scss";
 @import "_tabs.scss";
 @import "_image.scss";
+@import "_albums.scss";
 
 // Resets
 ul {
@@ -22,12 +23,10 @@ ul {
   container-type: inline-size;
 }
 
-
 html {
   --site-nav-height: 5rem;
   --site-content-width: 1232px;
   --footer-height: 3rem;
-
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
 
