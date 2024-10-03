@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainContentSection from '../layouts/MainContentSection.astro';
+import Album from '../components/Album.astro';
+import { AlbumData } from '../data/albumData';
+
 const title = 'Albums';
 const sectionClassName = 'albums';
 ---
@@ -17,6 +20,8 @@ const sectionClassName = 'albums';
     altText='Anton recording guitar in the studio'
   />
   <MainContentSection title={title}>
-    <p>Content coming soon!</p>
+    <div>
+      {AlbumData.map((album) => <Album {...album} />)}
+    </div>
   </MainContentSection>
 </Layout>

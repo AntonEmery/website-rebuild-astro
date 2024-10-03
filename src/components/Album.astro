@@ -1,0 +1,41 @@
+---
+import { Picture, Image } from 'astro:assets';
+
+import AlbumLinks from './AlbumLinks.astro';
+
+interface Props {
+  title: string;
+  image: string;
+  altText: string;
+  description: string;
+  albumLinks: {
+    href: string;
+    linkText: string;
+    icon: string;
+  }[];
+}
+
+const { title, image, description, albumLinks, altText } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpeg,jpg,png,gif}',
+);
+
+const imageModule = await images[image]();
+const albumImage = imageModule.default;
+---
+
+<section class='album'>
+  <h2>{title}</h2>
+  <div class='album__content'>
+    <Image src={albumImage} class='album__image' alt={altText} />
+    <div class='album__right-column'>
+      <div class='album__links'>
+        {albumLinks.map((link) => <AlbumLinks {...link} title={title} />)}
+      </div>
+      <div class='album__description'>
+        <p>{description}</p>
+      </div>
+    </div>
+  </div>
+</section>
