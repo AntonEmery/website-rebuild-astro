@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogPostLayout from '../layouts/BlogPostLayout.astro';
+
+// Create url paths for each blog post
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+
+  // Map each post to a URL path
+  // post.id is set at the url slug
+  return posts.map((post) => {
+    return {
+      params: { slug: post.id },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+// Post content is rendered as <Content />
+const { Content } = await render(post);
+---
+
+<BlogPostLayout post={post}>
+  <Content />
+</BlogPostLayout>
