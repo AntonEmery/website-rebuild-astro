@@ -15,7 +15,69 @@ a {
   font-family: 'Hind Vadodara', sans-serif;
 }
 
-p {
+ /* Base Text Classes */
+ p, .text-base {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
+}
+
+.text-md {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-lg);
+}
+
+.text-xl {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-xl);
+}
+
+.text-xxl {
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-xxl);
+}
+
+.text-xxxl {
+  font-size: var(--font-size-xxxl);
+  line-height: var(--line-height-xxxl);
+}
+
+/* Heading Classes */
+h1 .h1 {
+  font-size: var(--font-size-xxxl);
+  line-height: var(--line-height-xxxl);
+}
+
+h2, .h2 {
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-xxl);
+}
+
+h3, .h3 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-xl);
+}
+
+h4, .h4 {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-lg);
+}
+
+h5, .h5 {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-md);
+}
+
+h6, .h6 {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-sm);
 }

@@ -5,6 +5,8 @@
 @import "_nav.scss";
 @import "_section.scss";
 @import "_maincontentsection.scss";
+@import "_mainblogsection.scss";
+@import "_blog.scss";
 @import "_layout.scss";
 @import "_footer.scss";
 @import "_type.scss";
@@ -23,25 +25,57 @@ ul {
   container-type: inline-size;
 }
 
-html {
-  --site-nav-height: 5rem;
-  --site-content-width: 1232px;
-  --footer-height: 3rem;
+:root {
+
+  font-size: 16px;
+
+  // Responsive font sizes
+  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --line-height-base: clamp(1.6rem, 0.34vw + 0.91rem, 1.547rem);
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
-
-  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-  --line-height-base: clamp(1.5rem, 0.34vw + 0.91rem, 1.547rem);
+  --line-height-sm: clamp(1.2rem, 0.3vw + 0.8rem, 1.3rem);
 
   --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+  --line-height-md: clamp(1.6rem, 0.5vw + 1.2rem, 1.8rem);
+
   --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+  --line-height-lg: clamp(1.8rem, 0.8vw + 1.4rem, 2.2rem);
+
   --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+  --line-height-xl: clamp(2rem, 1.2vw + 1.6rem, 2.6rem);
+
   --font-size-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+  --line-height-xxl: clamp(2.4rem, 1.5vw + 1.8rem, 3rem);
+
   --font-size-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
+  --line-height-xxxl: clamp(3rem, 2.5vw + 2.2rem, 4.2rem);
+
+
+
 
   --icon-size: 1rem;
 
+  --site-nav-height: 5rem;
+  --site-content-width: 1232px;
+  --blog-content-width: 800px;
+  --footer-height: 3rem;
+
+  --main-section-margin: 0 auto 2rem auto;
+  --section-min-height: 20rem;
+  --section-margin-top: -5rem;
+
+
+
+  // Colors
   --link-color: blue;
   --nav-link-color: black;
   --divider-color: #ECECF5;
+  --light-grey: #F8F8FB;
+  --white: white;
+  --black: black;
+
+  --blog-post-background: var(--light-grey);
+  --nav-background: var(--white);
+  --nav-link-color: var(--black);
 }
