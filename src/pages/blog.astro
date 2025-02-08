@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog');
+
+import Layout from '../layouts/Layout.astro';
+import HeaderSection from '../layouts/HeaderSection.astro';
+import MainBlogSection from '../layouts/MainBlogSection.astro';
+
+const title = 'Blog';
+const sectionClassName = 'blog';
+---
+
+<Layout
+  title='Anton Emery | Blog'
+  description='The blog of Anton Emery, celtic fingestyle guitarist'
+  keywords='celtic, fingerstyle, guitar, acoustic, sheet musc, tabs'
+>
+  <HeaderSection
+    sectionClassName={sectionClassName}
+    imagePath='/src/assets/anton-steve.jpg'
+    altText='Playing a tune with Steve Baughman on banjo'
+  />
+  <MainBlogSection title={title}>
+    <p>The spot for my music related ramblings</p>
+    <div>
+      {
+        posts.map((post) => {
+          return (
+            <div>
+              <h2 class='h5'>{post.data.title}</h2>
+              <p class='post-preview'>{post.data.preview}</p> -{' '}
+              <a class='text-base' href={`/${post.data.slug}`}>
+                Read more
+              </a>
+            </div>
+          );
+        })
+      }
+    </div>
+  </MainBlogSection>
+</Layout>

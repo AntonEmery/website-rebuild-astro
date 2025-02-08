@@ -1,0 +1,22 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImageAndCaption from '../components/ImageAndCaption.astro';
+import MainBlogSection from '../layouts/MainBlogSection.astro';
+const { post } = Astro.props;
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  keywords={post.data.tags}
+>
+  <div class='blog-post-wrapper'>
+    <MainBlogSection title={post.data.pageTitle}>
+      <ImageAndCaption
+        imagePath={post.data.featuredImage.url}
+        altText={post.data.featuredImage.alt}
+      />
+      <slot />
+    </MainBlogSection>
+  </div>
+</Layout>
