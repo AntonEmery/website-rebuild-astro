@@ -22,7 +22,11 @@ import { Tabs } from '../data/tabs';
     href='https://antonemery.bandcamp.com'
     target='_blank'
     rel='noopener noreferrer'>Bandcamp</a
-  > or perhaps consider <a href="https://buymeacoffee.com/antonemery" target="_blank" rel="noopener noreferrer">buying me a coffee</a>.
+  > or perhaps consider <a
+    href='https://buymeacoffee.com/antonemery'
+    target='_blank'
+    rel='noopener noreferrer'>buying me a coffee</a
+  >.
 </p>
 
 <Divider />
@@ -31,8 +35,8 @@ import { Tabs } from '../data/tabs';
   Tabs.map((tab) => (
     <>
       <section class='tabs'>
-        <h2>{tab.title}</h2>
-        <h3>Tuning: {tab.tuning}</h3>
+        <h2 class='h4'>{tab.title}</h2>
+        <h3 class='h5'>Tuning: {tab.tuning}</h3>
         <p>{tab.description}</p>
         <div class='tabs__controls'>
           {tab.audio && (

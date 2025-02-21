@@ -1,6 +1,6 @@
 .site-nav {
-  background: white;
-  position: sticky;
+  background: var(--nav-background);
+  position: fixed;
   top: 0;
   width: 100%;
   transition: background 0.5s ease-in-out;
@@ -13,7 +13,7 @@
   }
 
   a {
-    color: black;
+    color: var(--nav-link-color);
     text-decoration: none;
   }
 
@@ -58,6 +58,11 @@
     z-index: 4;
     transition: all 0.15s ease-out;
     pointer-events: none;
+    display: block;
+
+    @container site-root-container (width >= #{$mobile-nav-footer-breakpoint}) {
+      display: none;
+    }
 
     &--open {
       opacity: 1;
