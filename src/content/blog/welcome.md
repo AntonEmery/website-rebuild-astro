@@ -1,14 +1,13 @@
 ---
 layout: ../../layouts/BlogPostLayout.astro
 title: 'Got this blog up again | Celtic Fingerstyle Guitar'
-pageTitle: 'Welcome, got this blog up again'
+postTitle: 'Welcome, got this blog up again'
 slug: 'welcome'
 pubDate: '1-11-2025'
 description: "My celtic guitar blog is up and running again"
 featuredImage:
   url: "/src/assets/goodall-roche.jpg"
   alt: "Anton putting a capo on his Goodall guitar"
-preview: 'Finally got this blog back up'
 author: 'Anton'
 keywords: 'fingerstyle, acoustic, guitar, celtic'
 ---

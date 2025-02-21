@@ -27,8 +27,7 @@ const sectionClassName = 'blog';
         posts.map((post) => {
           return (
             <div>
-              <h2 class='h5'>{post.data.title}</h2>
-              <p class='post-preview'>{post.data.preview}</p> -{' '}
+              <h2 class='h5'>{post.data.postTitle}</h2>{' '}
               <a class='text-base' href={`/${post.data.slug}`}>
                 Read more
               </a>
