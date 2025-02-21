@@ -1,4 +1,19 @@
 ---
+interface Props {
+  post: {
+    data: {
+      title: string;
+      description: string;
+      keywords: string;
+      pageTitle: string;
+      featuredImage: {
+        url: string;
+        alt: string;
+      };
+    };
+  };
+}
+
 import Layout from '../layouts/Layout.astro';
 import ImageAndCaption from '../components/ImageAndCaption.astro';
 import MainBlogSection from '../layouts/MainBlogSection.astro';
@@ -8,7 +23,7 @@ const { post } = Astro.props;
 <Layout
   title={post.data.title}
   description={post.data.description}
-  keywords={post.data.tags}
+  keywords={post.data.keywords}
 >
   <div class='blog-post-wrapper'>
     <MainBlogSection title={post.data.pageTitle}>
