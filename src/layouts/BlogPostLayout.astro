@@ -5,7 +5,7 @@ interface Props {
       title: string;
       description: string;
       keywords: string;
-      pageTitle: string;
+      postTitle: string;
       featuredImage: {
         url: string;
         alt: string;
@@ -26,7 +26,7 @@ const { post } = Astro.props;
   keywords={post.data.keywords}
 >
   <div class='blog-post-wrapper'>
-    <MainBlogSection title={post.data.pageTitle}>
+    <MainBlogSection title={post.data.postTitle}>
       <ImageAndCaption
         imagePath={post.data.featuredImage.url}
         altText={post.data.featuredImage.alt}
