@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.0.8",
     "@fontsource/hind-vadodara": "^5.0.18",
     "@fontsource/lusitana": "^5.0.8",
     "@fontsource/mallanna": "^5.0.8",
