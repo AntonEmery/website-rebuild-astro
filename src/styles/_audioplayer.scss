@@ -1,0 +1,31 @@
+.audio-player {
+  container-name: player-container;
+  container-type: inline-size;
+  padding-bottom: 1rem;
+
+  &--center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+
+    audio {
+      margin-right: 1rem;
+    }
+
+    @container player-container (width <= 500px ) {
+      flex-direction: column;
+
+      .tabs-icons {
+        margin-top: 1rem;
+      }
+
+      audio {
+        margin-right: 0;
+      }
+    }
+  }
+}

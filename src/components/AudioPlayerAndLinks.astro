@@ -1,0 +1,63 @@
+---
+interface Props {
+  tab: {
+    audio?: string;
+    notation: string;
+    video?: string;
+  };
+  isCentered?: boolean;
+}
+
+const { tab, isCentered = false } = Astro.props;
+---
+
+<div class:list={['audio-player', { 'audio-player--center': isCentered }]} }>
+  <div class='audio-player__controls'>
+    {
+      tab.audio && (
+        <audio controls>
+          <source src={tab.audio} type='audio/mpeg' />
+          Your browser does not support the audio element.
+        </audio>
+      )
+    }
+    <div class='tabs-icons'>
+      <a
+        class='icon-link'
+        href={tab.notation}
+        title='Sheet music download'
+        target='_blank'
+      >
+        <svg class='icon icon--32'>
+          <use href='/icon/icons.svg#file-pdf'></use>
+        </svg>
+      </a>
+      {
+        tab.video && (
+          <a
+            class='icon-link'
+            href={tab.video}
+            title='Youtube link'
+            target='_blank'>
+            <svg class='icon icon--32'>
+              <use href='/icon/icons.svg#youtube' />
+            </svg>
+          </a>
+        )
+      }
+      {
+        tab.audio && (
+          <a
+            class='icon-link'
+            href={tab.audio}
+            title='Audio file download'
+            target='_blank'>
+            <svg class='icon icon--32'>
+              <use href='/icon/icons.svg#music-notes' />
+            </svg>
+          </a>
+        )
+      }
+    </div>
+  </div>
+</div>
