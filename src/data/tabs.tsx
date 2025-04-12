@@ -89,6 +89,7 @@ export const Tabs: Tab[] = [
     description: "Another beautiful tune by Turlough O'Carolan",
     tuning: 'CGDGCD',
     audio: '/audio/princess_royal.mp3',
+    video: 'https://www.youtube.com/watch?v=5Ue2-azN6p0',
     notation: '/tabs/princess_royal.pdf',
   },
   {

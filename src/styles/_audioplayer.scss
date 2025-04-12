@@ -1,7 +1,12 @@
-.tabs {
-  container-name: tabs-container;
+.audio-player {
+  container-name: player-container;
   container-type: inline-size;
   padding-bottom: 1rem;
+
+  &--center {
+    display: flex;
+    justify-content: center;
+  }
 
   &__controls {
     display: flex;
@@ -11,7 +16,7 @@
       margin-right: 1rem;
     }
 
-    @container tabs-container (width <= 500px ) {
+    @container player-container (width <= 500px ) {
       flex-direction: column;
 
       .tabs-icons {

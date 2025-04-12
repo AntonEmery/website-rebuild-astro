@@ -22,3 +22,11 @@
   background-color: var(--divider-color);
   margin: 0 auto;
 }
+
+.section__video {
+  display: block;
+
+  lite-youtube {
+    margin: 0 auto;
+  }
+}
