@@ -37,6 +37,7 @@ export const Tabs: Tab[] = [
     description: "A fun tune I heard Steve Baughman play one night as we were hanging out with a bottle of scotch. I made a mental note to arrange myself one day. He said he got it from Martin Hayes.",
     tuning: 'CGDGCD',
     audio: '/audio/granny_in_the_corner.mp3',
+    video: 'https://youtu.be/9EfX_GQR9x8?t=136',
     notation: '/tabs/granny_in_the_corner.pdf',
   },
   {
@@ -62,12 +63,18 @@ export const Tabs: Tab[] = [
     notation: '/tabs/drunken_gauger.pdf',
   },
   {
-    title: "Conset Y Peipar Coch/Erddigan Y Pibydd",
-    description: "These were some of the earliest celtic tunes I arranged. I came across them on a compilation album of Welsh music I found in the music library at Florida State University.",
+    title: "Conset Y Peipar Coch - Welsh Pipe Tune #1",
+    description: "This tune and the Welsh Pipe Tune #2 were some of the earliest celtic tunes I arranged. I came across them on a compilation album of Welsh music I found in the music library at Florida State University.",
     tuning: 'CGDGCD',
     audio: '/audio/Conset_Y_Peipar_Coch_Erddigan_Y_Pibydd.mp3',
     video: 'https://youtu.be/GbVrGaN8ncg?si=yzYgGczGWVFBonnh',
     notation: '/tabs/Conset_Y_Peipar_Coch_Erddigan_Y_Pibydd.pdf',
+  },
+  {
+    title: 'Erddigan Y Pibydd - Welsh Pipe Tune #2',
+    description: "This is the second of the two Welsh pipe tunes I arranged. I also found it on the same compilation album.",
+    tuning: 'CGDGCD',
+    notation: '/tabs/welsh-pipe-tune-2.pdf',
   },
   {
     title: "O'Carolan's Receipt",
