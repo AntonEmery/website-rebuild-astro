@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 .site-nav {
   background: var(--nav-background);
   position: fixed;
@@ -42,7 +44,7 @@
       }
     }
 
-    @container site-root-container (width <= #{$mobile-nav-footer-breakpoint}) {
+    @container site-root-container (width <= #{vars.$mobile-nav-footer-breakpoint}) {
       display: none;
     }
   }
@@ -60,7 +62,7 @@
     pointer-events: none;
     display: block;
 
-    @container site-root-container (width >= #{$mobile-nav-footer-breakpoint}) {
+    @container site-root-container (width >= #{vars.$mobile-nav-footer-breakpoint}) {
       display: none;
     }
 
@@ -117,7 +119,7 @@
     background: transparent;
     border: none;
 
-    @container site-root-container (width > #{$mobile-nav-footer-breakpoint}) {
+    @container site-root-container (width > #{vars.$mobile-nav-footer-breakpoint}) {
       display: none;
     }
 
