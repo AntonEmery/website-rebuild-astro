@@ -1,10 +1,12 @@
+@use "breakpoints" as bp;
+
 .site-content-width {
   width: 100%;
   max-width: var(--site-content-width);
   margin: 0 auto;
   padding: 0 2rem;
 
-  @media (min-width: $desktop-upper-limit) {
+  @media (min-width: bp.$desktop-upper-limit) {
     padding: 0 3rem;
   }
 }

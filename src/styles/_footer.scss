@@ -1,3 +1,5 @@
+@use "variables" as vars;
+
 .footer {
   display: flex;
   justify-content: center;
@@ -12,7 +14,7 @@
     font-size: var(--font-size-sm);
   }
 
-  @media screen and (max-width: $mobile-nav-footer-breakpoint) {
+  @media screen and (max-width: vars.$mobile-nav-footer-breakpoint) {
     flex-direction: column;
     margin-bottom: 1rem;
     align-items: center;
