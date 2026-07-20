@@ -64,7 +64,7 @@ export const Tabs: Tab[] = [
   },
   {
     title: "Conset Y Peipar Coch - Welsh Pipe Tune #1",
-    description: "This tune and the Welsh Pipe Tune #2 were some of the earliest celtic tunes I arranged. I came across them on a compilation album of Welsh music I found in the music library at Florida State University.",
+    description: "This tune and the Welsh Pipe Tune #2 were some of the earliest celtic tunes I arranged. I came across them on a compilation album of Welsh music, The Rough Guide to the Music of Wales, that I found in the music library at Florida State University.",
     tuning: 'CGDGCD',
     audio: '/audio/Conset_Y_Peipar_Coch_Erddigan_Y_Pibydd.mp3',
     video: 'https://youtu.be/GbVrGaN8ncg?si=yzYgGczGWVFBonnh',
@@ -74,6 +74,7 @@ export const Tabs: Tab[] = [
     title: 'Erddigan Y Pibydd - Welsh Pipe Tune #2',
     description: "This is the second of the two Welsh pipe tunes I arranged. I also found it on the same compilation album.",
     tuning: 'CGDGCD',
+    video: 'https://youtu.be/QCNLo4DU6hw',
     notation: '/tabs/welsh-pipe-tune-2.pdf',
   },
   {
