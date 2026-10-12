@@ -6,6 +6,7 @@ interface Props {
 }
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Lightbox from '../components/Lightbox.astro';
 const { title, description, keywords } = Astro.props;
 
 import '../styles/styles.scss';
@@ -66,5 +67,6 @@ import '@fontsource/hind-vadodara/700.css';
       <slot />
       <Footer />
     </div>
+    <Lightbox />
   </body>
 </html>
