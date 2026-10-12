@@ -1,30 +1,67 @@
 ---
-import { Picture } from 'astro:assets';
+import { Picture, getImage } from 'astro:assets';
 
 interface Props {
   imagePath: string;
   altText: string;
   caption?: string;
+  // Opens the image in a lightbox when clicked
+  lightbox?: boolean;
+  // Images sharing the same gallery name can be browsed with prev/next in the lightbox (implies lightbox)
+  gallery?: string;
 }
 
-const { imagePath, altText, caption } = Astro.props;
+const { imagePath, altText, caption, lightbox, gallery } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/*.{jpeg,jpg,png,gif}',
 );
 
 const imageModule = await images[imagePath]();
 const image = imageModule.default;
+
+const hasLightbox = lightbox || Boolean(gallery);
+
+// Larger version shown in the lightbox
+const fullImage = hasLightbox
+  ? await getImage({
+      src: image,
+      width: Math.min(image.width, 1600),
+      format: 'webp',
+    })
+  : undefined;
 ---
 
 <div class='section__figure'>
   <figure class='figure'>
-    <Picture
-      src={image}
-      alt={altText}
-      pictureAttributes={{
-        style: 'max-width: 600px { width: 100%; height: auto; }',
-      }}
-    />
+    {
+      fullImage ? (
+        <a
+          class='lightbox-trigger'
+          href={fullImage.src}
+          data-lightbox
+          data-gallery={gallery}
+          data-alt={altText}
+          data-caption={caption}
+          aria-label={`View larger image: ${altText}`}
+        >
+          <Picture
+            src={image}
+            alt={altText}
+            pictureAttributes={{
+              style: 'max-width: 600px { width: 100%; height: auto; }',
+            }}
+          />
+        </a>
+      ) : (
+        <Picture
+          src={image}
+          alt={altText}
+          pictureAttributes={{
+            style: 'max-width: 600px { width: 100%; height: auto; }',
+          }}
+        />
+      )
+    }
     {caption && <figcaption>{caption}</figcaption>}
   </figure>
 </div>
