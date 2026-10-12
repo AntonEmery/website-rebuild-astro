@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  title: string;
+  excerpt: string;
+  href: string;
+  imagePath: string;
+  altText: string;
+}
+
+const { title, excerpt, href, imagePath, altText } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpeg,jpg,png,gif}',
+);
+
+const imageModule = await images[imagePath]();
+const cardImage = imageModule.default;
+---
+
+<a class='card' href={href}>
+  <Image src={cardImage} class='card__image' alt={altText} />
+  <div class='card__text'>
+    <h2 class='h5 card__title'>{title}</h2>
+    <p class='card__description'>{excerpt}</p>
+  </div>
+</a>

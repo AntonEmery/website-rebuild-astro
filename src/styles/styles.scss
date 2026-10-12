@@ -12,6 +12,7 @@
 @use "_image.scss";
 @use "_albums.scss";
 @use "_audioplayer.scss";
+@use "_card.scss";
 
 // Resets
 ul {
@@ -57,7 +58,7 @@ ul {
 
   --site-nav-height: 5rem;
   --site-content-width: 1232px;
-  --blog-content-width: 800px;
+  --blog-content-width: 1200px;
   --footer-height: 3rem;
 
   --main-section-margin: 0 auto 2rem auto;
@@ -65,6 +66,11 @@ ul {
   --section-margin-top: -5rem;
 
 
+
+  // Shape
+  --border-radius: .75rem;
+  --box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+  --box-shadow-hover: 0 6px 16px rgba(0, 0, 0, .12);
 
   // Colors
   --link-color: blue;

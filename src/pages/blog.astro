@@ -5,6 +5,7 @@ const posts = await getCollection('blog');
 import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainBlogSection from '../layouts/MainBlogSection.astro';
+import Card from '../components/Card.astro';
 
 const title = 'Blog';
 const sectionClassName = 'blog';
@@ -22,16 +23,17 @@ const sectionClassName = 'blog';
   />
   <MainBlogSection title={title}>
     <p>The spot for my music related ramblings</p>
-    <div>
+    <div class='card-grid'>
       {
         posts.map((post) => {
           return (
-            <div>
-              <h2 class='h5'>{post.data.postTitle}</h2>{' '}
-              <a class='text-base' href={`/${post.data.slug}`}>
-                Read more
-              </a>
-            </div>
+            <Card
+              title={post.data.postTitle}
+              excerpt={post.data.excerpt}
+              href={`/${post.data.slug}`}
+              imagePath={post.data.featuredImage.url}
+              altText={post.data.featuredImage.alt}
+            />
           );
         })
       }
