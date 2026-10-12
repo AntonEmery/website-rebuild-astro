@@ -1,0 +1,157 @@
+@use "breakpoints" as bp;
+
+.lightbox-trigger {
+  display: block;
+  cursor: zoom-in;
+}
+
+// Stop the page scrolling behind the open lightbox
+html:has(.lightbox[open]) {
+  overflow: hidden;
+}
+
+.lightbox {
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 1rem;
+  border: none;
+  background: transparent;
+  color: var(--white);
+
+  &[open] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  &::backdrop {
+    background-color: var(--lightbox-backdrop);
+  }
+
+  &__figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    margin: 0;
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: calc(100dvh - 6rem);
+    object-fit: contain;
+    cursor: default;
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    max-width: 60ch;
+    margin-top: .75rem;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-sm);
+  }
+
+  &__counter {
+    opacity: .7;
+  }
+
+  button {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--lightbox-button-background);
+    color: var(--white);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--lightbox-button-background-hover);
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+  }
+
+  &--single &__prev,
+  &--single &__next {
+    display: none;
+  }
+
+  // On small screens, overlay prev/next on the image; swiping also works
+  @media (max-width: bp.$mobile-upper-limit) {
+    padding: .5rem;
+
+    &__prev,
+    &__next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    &__prev {
+      left: .5rem;
+    }
+
+    &__next {
+      right: .5rem;
+    }
+  }
+}
+
+// Same-height rows: each thumbnail grows in proportion to its aspect ratio,
+// so every row fills the full width without cropping
+.thumbnail-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 2rem 0;
+
+  // Stops the last row from stretching to fill the width
+  &::after {
+    content: '';
+    flex-grow: 999;
+  }
+}
+
+.thumbnail {
+  flex: var(--thumbnail-ratio) 1 calc(var(--thumbnail-ratio) * var(--thumbnail-height));
+  min-width: 0;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: box-shadow .2s ease, transform .2s ease;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--thumbnail-ratio);
+    object-fit: cover;
+  }
+}
