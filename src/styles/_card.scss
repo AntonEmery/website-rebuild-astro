@@ -1,0 +1,55 @@
+@use "breakpoints" as bp;
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: bp.$mobile-upper-limit) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .2s ease, transform .2s ease;
+
+  &:hover,
+  &:focus-visible {
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-2px);
+  }
+
+  &__image {
+    width: 100%;
+    min-width: 0;
+    height: 12.5rem;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    min-height: 103px;
+  }
+
+  &__title {
+    margin: 0 1rem .5rem 1rem;
+  }
+
+  &__description {
+    margin: 0 1rem 1rem 1rem;
+  }
+
+  &__link {
+    color: var(--link-color);
+    margin: 0 1rem 1rem 1rem;
+  }
+}
