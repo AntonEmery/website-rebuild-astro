@@ -52,7 +52,7 @@
   &__mobile {
     opacity: 0;
     position: absolute;
-    background: white;
+    background: var(--white);
     top: 0;
     right: 0;
     height: auto;
@@ -126,7 +126,7 @@
     span {
       height: 4px;
       width: 40px;
-      background: black;
+      background: var(--black);
       transition: all 0.25s ease-out;
       z-index: 3;
     }
