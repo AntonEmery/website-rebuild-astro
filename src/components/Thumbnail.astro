@@ -1,0 +1,63 @@
+---
+import { Image, getImage } from 'astro:assets';
+
+interface Props {
+  imagePath: string;
+  altText: string;
+  // Shown under the image in the lightbox
+  caption?: string;
+  // Thumbnails sharing the same gallery name can be browsed with prev/next in the lightbox.
+  // Not needed inside a ThumbnailGrid, which groups its thumbnails automatically
+  gallery?: string;
+  // Target row height in pixels; the width follows the image's aspect ratio
+  height?: number;
+  // Crop to a square instead of keeping the original aspect ratio
+  crop?: boolean;
+}
+
+const {
+  imagePath,
+  altText,
+  caption,
+  gallery,
+  height = 200,
+  crop = false,
+} = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/*.{jpeg,jpg,png,gif}',
+);
+
+const imageModule = await images[imagePath]();
+const image = imageModule.default;
+
+const ratio = crop ? 1 : image.width / image.height;
+const width = Math.round(height * ratio);
+
+// Larger version shown in the lightbox
+const fullImage = await getImage({
+  src: image,
+  width: Math.min(image.width, 1600),
+  format: 'webp',
+});
+---
+
+<a
+  class='thumbnail lightbox-trigger'
+  href={fullImage.src}
+  data-lightbox
+  data-gallery={gallery}
+  data-alt={altText}
+  data-caption={caption}
+  aria-label={`View larger image: ${altText}`}
+  style={`--thumbnail-ratio: ${ratio}; --thumbnail-height: ${height}px`}
+>
+  <Image
+    src={image}
+    alt={altText}
+    width={width}
+    height={height}
+    fit='cover'
+    densities={[1, 2]}
+    class='thumbnail__image'
+  />
+</a>
