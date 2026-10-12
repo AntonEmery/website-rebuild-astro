@@ -48,4 +48,6 @@ Blog posts can import and use components directly (e.g. `AudioPlayerAndLinks`, `
 
 ### Styling
 
-All styles are SCSS partials in `src/styles/`, imported centrally via `src/styles/styles.scss`. CSS custom properties for colors, typography scale (fluid `clamp()`-based), and layout dimensions are defined in `_variables.scss`. Responsive breakpoints are in `_breakpoints.scss`.
+All styles are SCSS partials in `src/styles/`, imported centrally via `src/styles/styles.scss`. CSS custom properties for colors, typography scale (fluid `clamp()`-based), and layout dimensions are defined in the `:root` block in `styles.scss`. Responsive breakpoints are in `_breakpoints.scss`.
+
+Never use raw color values (hex, `rgb()`/`rgba()`, `hsl()`/`hsla()`, or named colors like `white`; `transparent` and `currentColor` are fine) in SCSS partials or components. Define every color as a CSS custom property in the `:root` block in `src/styles/styles.scss`, then reference it with `var(--name)`.

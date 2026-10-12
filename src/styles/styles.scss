@@ -13,6 +13,7 @@
 @use "_albums.scss";
 @use "_audioplayer.scss";
 @use "_card.scss";
+@use "_lightbox.scss";
 
 // Resets
 ul {
@@ -79,6 +80,10 @@ ul {
   --light-grey: #F8F8FB;
   --white: white;
   --black: black;
+  --popup-overlay: rgba(0, 0, 0, .5);
+  --lightbox-backdrop: rgba(0, 0, 0, .9);
+  --lightbox-button-background: rgba(255, 255, 255, .1);
+  --lightbox-button-background-hover: rgba(255, 255, 255, .25);
 
   --blog-post-background: var(--light-grey);
   --nav-background: var(--white);
