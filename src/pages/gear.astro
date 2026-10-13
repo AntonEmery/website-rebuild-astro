@@ -2,8 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import HeaderSection from '../layouts/HeaderSection.astro';
 import MainContentSection from '../layouts/MainContentSection.astro';
+import ThumbnailGrid from '../components/ThumbnailGrid.astro';
+import Thumbnail from '../components/Thumbnail.astro';
 
-const title = 'Gear';
+const title = 'The instruments that I play';
 const sectionClassName = 'gear';
 ---
 
@@ -18,6 +20,84 @@ const sectionClassName = 'gear';
     altText='guitar and banjo leaning on the couch'
   />
   <MainContentSection title={title}>
-    <p>Content coming soon!</p>
+    <p>
+      It has been said that we live in the second golden age of guitar building,
+      and I am inclined to agree. The craftsmanship and innovation in modern
+      guitar making is truly remarkable. There are amazing instruments available
+      today at all price points, from large production facilities to solo
+      luthiers building ten guitars a year.
+    </p>
+    <p>
+      I am lucky to own a few nice instruments, which inspire and bring me joy
+      every day.
+    </p>
+    <h2 class='h5'>
+      2008 Alberico OM, "Swannanoa" - Sitka Spruce/Indian Rosewood
+    </h2>
+    <p>
+      This guitar is my number one. If the house was on fire I would grab this
+      one first. It is made by Vancouver Island based luthier <a
+        href='https://www.albericoguitar.com/'
+        target='_blank'
+        rel='noopener noreferrer'>Fabrizio Alberico</a
+      >. It is his interpretation on the classic OM shape, being just slightly
+      larger and deeper. To me this gives it a touch bigger bass tone and
+      response, while still being super comfortable to play.
+    </p>
+    <p>
+      This instrument has a Sitka spruce top, Indian Rosewood back and sides,
+      and cocobolo binding and headplate. The neck is mahgony with an ebony
+      fingerboard. The scale length is 25.5 inches, with a nut width of 1.75
+      inches and bridge spacing of 2.25 inches. It has Gotoh 510 tuners, and a
+      dual source pickup system consisting of a McIntyre Feather and DPA mic
+      both wired to a stereo endpin jack.
+    </p>
+    <p>
+      For my tastes, this is the consummate fingerstyle instrument. It is
+      articulate, balanced, and responsive, with great note separation and
+      clarity. One frequency does not overpower another. It has just the right
+      amount of overtones. The intonation is great up and down the neck. I have
+      had a few folks tell me it is the most in tune guitar they have ever
+      played. The neck is a comfortable C shape.
+    </p>
+    <p>
+      Here are some pictures of me with it over the years. It is funny to see
+      the guitar when I first got it, the top was almost white. Now almost
+      twenty years later it has mellowed to a deep golden color.
+    </p>
+    <ThumbnailGrid>
+      <Thumbnail
+        imagePath='/src/assets/alberico-sheet-music.jpg'
+        altText='Acoustic guitar on a table with sheet music'
+      />
+      <Thumbnail
+        imagePath='/src/assets/alberico-1.jpg'
+        altText='Anton sitting on the couch with his Alberico guitar'
+        caption='Photo by Fabrizio Alberico'
+      />
+      <Thumbnail
+        imagePath='/src/assets/alberico-2.jpg'
+        altText='Anton sitting on the couch with his Alberico guitar'
+        caption='Photo by Fabrizio Alberico'
+      />
+      <Thumbnail
+        imagePath='/src/assets/alberico-3.jpg'
+        altText='Anton sitting outside in the sun with his Alberico guitar'
+      />
+      <Thumbnail
+        imagePath='/src/assets/alberico-4.jpg'
+        altText='Anton sitting outside in the sun with his Alberico guitar'
+      />
+      <Thumbnail
+        imagePath='/src/assets/alberico-5.jpg'
+        altText='Anton playing in the classical position'
+        caption='Experimenting with different playing positions. This must have been right after I got the guitar, as the top is still very light in color.'
+      />
+      <Thumbnail
+        imagePath='/src/assets/alberico-6.jpg'
+        altText='Anton recording in the studio with his guitar.'
+        caption='Recording my first album, "Noone Lasses", in Doug Youngs studio.'
+      />
+    </ThumbnailGrid>
   </MainContentSection>
 </Layout>
